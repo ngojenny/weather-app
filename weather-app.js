@@ -3,23 +3,28 @@
 var weatherWidget = {
 };
 
-weatherWidget.apiURL ='http://api.wunderground.com/api/c6e0884af486dcb5/conditions/q/CA/San_Francisco.json';
-
 weatherWidget.init = function() {
 	//this code in here is used to initialize our application
-	weatherWidget.getData();
+	$('.user_input').on('submit', function(e){
+		e.preventDefault();
+		var usersCountry = $('input[name=country]').val();
+		var usersCity = $('input[name=city]').val();
+		weatherWidget.getData(usersCountry, usersCity);
+	});
 };
 
 //When the page loads get some data
 //Make an AJAX call to the wundergrounds API
-weatherWidget.getData = function() {
+weatherWidget.getData = function(usersCountry, usersCity) {
+	weatherWidget.apiURL = 'http://api.wunderground.com/api/c6e0884af486dcb5/conditions/q/' + usersCountry + '/' + usersCity + '.json';
+
 	$.ajax({
 		url: weatherWidget.apiURL,
 		method: 'GET',
-		dataType: 'json'
+		dataType: 'json',
 	})
 	.then(function(weatherData){
-		// console.log(weatherData.current_observation);
+		console.log(weatherData.current_observation);
 		var observation = weatherData.current_observation;
 		//pass the information along to the displayWeather so data represented by observation can be used down there V
 		weatherWidget.displayWeather(observation);

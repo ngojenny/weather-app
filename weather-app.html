@@ -3,37 +3,17 @@
 <head>
   <title>Weather Widget</title>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<style>
-  *, *:after, *:before {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-  body {
-    background: #4789EF;
-    color: white;
-    font-size: 30px;
-    font-family: 'Open Sans';
-    font-weight: 700;
-  }
-  a,
-  a:hover,
-  a:visited {
-    color: white;
-    text-decoration: none;
-  }
-  .weather_widget{
-    width: 400px;
-    height: 200px;
-    margin: 150px auto;
-
-  }
-
-</style>
 <body>
-
+<form action="" class="user_input">
+	<label for="country" class="accessibility">Enter your country: </label>
+	<input class="users_country" type="text" name="country">
+	<label for="city" class="accessibility">Enter your city: </label>
+	<input class="users_city" type="text" name="city">
+	<input type="submit" name="submit" value="Enter">
+</form>
 
 <div class="weather_widget">
   <img src="" alt="weather icon" class="weather_image">
@@ -45,7 +25,7 @@
 
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-
 <script src="weather-app.js"></script>
+
 </body>
 </html>
