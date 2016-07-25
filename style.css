@@ -6,15 +6,21 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-
+/* GLOBAL STYLES */
 body {
-	background: #4789EF;
+	background-image: url(background.png);
+	background-size: cover;
 	color: white;
 	font-size: 30px;
 	font-family: 'Open Sans';
-	font-weight: 700;
+	font-weight: 300;
 }
- 
+
+.wrapper {
+	width: 65%;
+	margin: 0 auto;
+}
+
 a,
 a:hover,
 a:visited {
@@ -22,8 +28,9 @@ a:visited {
 	text-decoration: none;
 }
 
+
 .weather_widget{
-	width: 400px;
-	height: 200px;
+	width: 35%;
 	margin: 150px auto;
+	background-color: rgba(19, 35, 45, 0.8);
 }

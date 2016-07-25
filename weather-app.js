@@ -16,18 +16,21 @@ weatherWidget.init = function() {
 //When the page loads get some data
 //Make an AJAX call to the wundergrounds API
 weatherWidget.getData = function(usersCountry, usersCity) {
-	weatherWidget.apiURL = 'http://api.wunderground.com/api/c6e0884af486dcb5/conditions/q/' + usersCountry + '/' + usersCity + '.json';
+	apiURL = 'http://api.wunderground.com/api/c6e0884af486dcb5/conditions/q/' + usersCountry + '/' + usersCity + '.json';
 
 	$.ajax({
-		url: weatherWidget.apiURL,
+		url: apiURL,
 		method: 'GET',
 		dataType: 'json',
 	})
 	.then(function(weatherData){
-		console.log(weatherData.current_observation);
+		console.log(weatherData.current_observation)
 		var observation = weatherData.current_observation;
-		//pass the information along to the displayWeather so data represented by observation can be used down there V
-		weatherWidget.displayWeather(observation);
+		if (typeof observation === 'undefined') {
+			alert('Whoops. Something went wrong, please double check the spelling of your country and city');
+		} else {
+			weatherWidget.displayWeather(observation);
+		}
 	});
 };
 
