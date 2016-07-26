@@ -21,6 +21,10 @@ body {
 	margin: 0 auto;
 }
 
+section {
+	padding: 100px 0;
+}
+
 a,
 a:hover,
 a:visited {
@@ -29,14 +33,14 @@ a:visited {
 }
 
 /* FORM/INPUT FIELDS STYLINGS */
+
 .accessibility {
 	position: absolute;
 	left: -9999px;
 }
 
-form {
-	margin-top: 100px;
-	text-align: center;
+.input .wrapper {
+	text-align: center;	
 }
 
 input[type="text"]{
@@ -46,29 +50,37 @@ input[type="text"]{
 	padding: 5px;
 }
 
-.input .wrapper {
+input[type="submit"] {
+	padding: 5px 20px;
+	margin-top: 30px;
+	color: rgba(19, 35, 45, 0.5);
+	text-transform: uppercase;
+	border: 3px solid rgba(19, 35, 45, 0.5);
+	background-color: transparent;
+	font-size: 20px;
+}
+
+/* WEATHER SECTION STYLES START */
+
+.weather .wrapper {
 	position: relative;
+	right: -100%;
+	transition: right 0.3s ease;
+}
+
+.wrapper.slide-in {
+	right: 0;
 }
 
 .temp {
 	font-size: 120px;
 	font-weight: 400;
 	position: absolute;
-	top: 9%;
+	top: -50%;
 	left: 50%;
 	transform: translateX(-50%);
 }
 
-input[type="submit"] {
-	text-transform: uppercase;
-	border: none;
-	border: 3px solid rgba(19, 35, 45, 0.5);
-	background-color: transparent;
-	font-size: 25px;
-	padding: 5px 20px;
-}
-
-/* WEATHER SECTION STYLES START */
 .weather img {
 	display: block;
 	position: relative;
@@ -78,7 +90,7 @@ input[type="submit"] {
 }
 .weather_widget{
 	width: 40%;
-	margin: 150px auto;
+	margin: 0 auto;
 	padding: 50px;
 	background-color: rgba(19, 35, 45, 0.8);
 	text-align: center;

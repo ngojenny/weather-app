@@ -49,6 +49,13 @@ weatherWidget.displayWeather = function(weather) {
 	$('.weather_string').text(condition);
 	var icon = weather.icon_url;
 	$('.weather_image').attr('src', icon);
+	$('.weather .wrapper').addClass('slide-in');
+	
+	//smooth scroll plugin
+	$.smoothScroll({
+		scrollTarget: '.temp',
+		speed: 400
+	});
 }
 
 
