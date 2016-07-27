@@ -10,6 +10,7 @@ weatherWidget.init = function() {
 		var usersCountry = $('input[name=country]').val();
 		var usersCity = $('input[name=city]').val();
 		weatherWidget.getData(usersCountry, usersCity);
+		document.getElementById('loader').style.display='block';
 	});
 };
 
@@ -50,12 +51,14 @@ weatherWidget.displayWeather = function(weather) {
 	var icon = weather.icon_url;
 	$('.weather_image').attr('src', icon);
 	$('.weather .wrapper').addClass('slide-in');
-	
+
 	//smooth scroll plugin
 	$.smoothScroll({
 		scrollTarget: '.temp',
 		speed: 400
 	});
+
+	document.getElementById('loader').style.display='none';
 }
 
 

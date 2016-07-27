@@ -48,16 +48,54 @@ input[type="text"]{
 	border-color: transparent;
 	background-color: rgba(255,255,255,0.5);
 	padding: 5px;
+	margin-bottom: 5px;
 }
 
 input[type="submit"] {
 	padding: 5px 20px;
-	margin-top: 30px;
+	margin: 30px auto;
 	color: rgba(19, 35, 45, 0.5);
 	text-transform: uppercase;
 	border: 3px solid rgba(19, 35, 45, 0.5);
 	background-color: transparent;
 	font-size: 20px;
+	transition: 
+		background 0.3s,
+		color 0.3s;
+}
+
+input[type="submit"]:hover{
+	background-color:rgba(19, 35, 45, 0.8);
+	color: rgba(255,255,255,0.8);
+	border: 3px solid transparent;
+}
+
+.small {
+	font-size: 14px;
+	color: rgba(255,255,255,0.7);
+}
+
+/* LOADER WHEEL */
+#loader {
+	width: 40px;
+	height: 40px;
+	margin: 0 auto;
+	border-top: 6px dotted #13232D;
+	border-right: 6px dotted #13232D;
+	border-bottom: 5px dotted #13232D;
+	border-left: 5px dotted #13232D;
+	border-radius: 50%;
+	animation: spin 2s linear infinite;
+	display: none;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
 
 /* WEATHER SECTION STYLES START */
@@ -90,8 +128,10 @@ input[type="submit"] {
 }
 .weather_widget{
 	width: 40%;
+	min-width: 330px;
 	margin: 0 auto;
 	padding: 50px;
 	background-color: rgba(19, 35, 45, 0.8);
 	text-align: center;
+	box-shadow: 5px 5px 15px rgba(19, 35, 45, 0.8);
 }

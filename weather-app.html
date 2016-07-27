@@ -11,14 +11,17 @@
     <div class="wrapper">
         <p>Enter your location to find the weather</p>
         <form action="" class="user_input">
-        	<label for="country" class="accessibility">Enter your country: </label>
-        	<input class="users_country" type="text" placeholder="Enter your country" name="country">
-        	<label for="city" class="accessibility">Enter your city: </label>
-        	<input class="users_city" type="text" placeholder="Enter your city" name="city"> <br />
-        	<input type="submit" name="submit" value="Enter">
+            <label for="country" class="accessibility">Enter your country: </label>
+            <input class="users_country" type="text" placeholder="Enter your country" name="country" required>
+            <label for="city" class="accessibility">Enter your city: </label>
+            <input class="users_city" type="text" placeholder="Enter your city" name="city" required> <br />
+            <p class="small">*if you are from the US please enter state instead of country</p>
+            <input type="submit" name="submit" value="Enter">
         </form>  
+        <div id="loader"></div>
     </div>
 </section>
+
 
 <section class="weather">
     <div class="wrapper">
