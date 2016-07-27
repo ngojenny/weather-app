@@ -135,3 +135,27 @@ input[type="submit"]:hover{
 	text-align: center;
 	box-shadow: 5px 5px 15px rgba(19, 35, 45, 0.8);
 }
+
+/* MEDIA QUERIES */
+@media (max-width: 530px) {
+	.wrapper {
+		width: 90%;
+	}
+}
+
+@media (max-width: 370px) {
+	.weather_widget {
+		width: 100%;
+		min-width: 0px;
+		font-size: 24px;
+	}
+
+	.temp {
+		font-size: 100px;
+		font-weight: 400;
+		position: absolute;
+		top: -50%;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
