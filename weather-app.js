@@ -61,6 +61,9 @@ weatherWidget.displayWeather = function(weather) {
 	document.getElementById('loader').style.display='none';
 }
 
+$(document).ajaxError(function(){
+	$('.log').text('Whoops something went wrong, try again');
+});
 
 $(document).ready(function(){
   weatherWidget.init();
